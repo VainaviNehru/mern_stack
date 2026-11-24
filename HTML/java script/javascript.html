@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions </title>
+</head>
+<body>
+    <script>
+    let data1=function(){
+        return "Hello JavaScript";
+    }
+    console.log(data1());
+
+
+    let mult=(a,b)=>{
+        return a*b;
+    }
+    console.log(mult(2,4));
+    
+    function sece(callback){
+        console.log("Welcome sece");
+        callback();
+    }
+    function stud(){
+        console.log("Display Student");
+    }
+    sece(stud)
+
+
+        let fetch_api=new Promise((resolve,reject)=>{
+            let api=true;
+            if(api){
+                resolve("API is working");
+            }
+            else{
+                reject("API is not working");
+            }
+        })
+        //console.log(fetch_api);
+        fetch_api.then(data => console.log(data))
+        
+
+
+        let fetch_api1=new Promise((resolve,reject)=>{
+            let api=true;
+            if(api){
+                resolve("fetched API data ");
+            }
+            else{
+                setTimeout((()=>reject("failed to fetch api data")), 2000);
+                }
+        })
+        //console.log(fetch_api1);
+        fetch_api1.then(data => console.log(data))
+    
+</script>
+</body>
+</html>
