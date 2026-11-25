@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stringfy_data=JSON.stringify({name:"Vainu",age:20,course:"Mern Stack"});
+        console.log(stringfy_data);
+        let parse_data=JSON.parse(stringfy_data);
+        console.log(parse_data);
+
+        let emp={
+            emp_id:101,
+            emp_name:"Priya",
+            salary:25000,
+            company:{
+                c1:"Wipro",
+                c2:"Infosys"
+            }
+        }
+        
+        //shallow copy(spread operator)
+        let copied_data={...emp};
+        copied_data.salary=30000;
+        console.log("copied_data",copied_data);
+        console.log("original_data",emp);
+        copied_data.company.c1="Wipro";
+        console.log("copied_data",copied_data);
+        console.log("original_data",emp);
+        //deep copy 
+        let deep_copied_data=JSON.parse(JSON.stringify(emp));
+        deep_copied_data.company.c1="Capgemini";
+        console.log("deep_copied_data",deep_copied_data);
+        console.log("original_data",emp);
+    </script>
+
+</body>
+</html> 
